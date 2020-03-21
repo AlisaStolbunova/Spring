@@ -1,0 +1,31 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+          http://www.springframework.org/schema/beans
+          http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="person" class="by.it.academy.clinic.Person" init-method="init" destroy-method="destroy">
+        <property name="id" value="1"/>
+        <property name="name" value="Ivan"/>
+        <property name="surname" value="Ivanov"/>
+        <property name="personInfo" ref="personInfo"/>
+        <property name="meetings" ref="meetings"/>
+        <property name="department" ref="department"/>
+    </bean>
+    <bean id="personInfo" class="by.it.academy.clinic.PersonInfo">
+        <property name="id" value="1"/>
+        <property name="city" value="Minsk"/>
+        <property name="street" value="Golodeda"/>
+        <property name="flat" value="45"/>
+    </bean>
+    <bean id="department" class="by.it.academy.clinic.Department">
+        <property name="id" value="1"/>
+        <property name="name" value="Information technology"/>
+    </bean>
+    <bean id="meetings" class="by.it.academy.clinic.Meeting">
+        <property name="id" value="1"/>
+        <property name="name" value="task1"/>
+    </bean>
+</beans>
